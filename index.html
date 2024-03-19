@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe vs Computer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="app.js"></script>
 </head>
 <body>
-    <div id="game-board">
-        <div class="cell" id="cell-0"></div>
-        <div class="cell" id="cell-1"></div>
-        <div class="cell" id="cell-2"></div>
-        <div class="cell" id="cell-3"></div>
-        <div class="cell" id="cell-4"></div>
-        <div class="cell" id="cell-5"></div>
-        <div class="cell" id="cell-6"></div>
-        <div class="cell" id="cell-7"></div>
-        <div class="cell" id="cell-8"></div>
+    <div class="main">
+        <div class="header">
+            <h1>BUSCAMINAS</h1>
+            <div class="formulario-juego">
+                <div class="formulario">
+                    <div class="entrada">
+                        <label for="tamaño">Tamaño (min 5, max 30): </label>
+                        <input id="tamaño" type="number" min="5" max="30" value="10">
+                    </div>
+                    <div class="entrada">
+                        <label for="num-bombas">Número de bombas (min 1, max: Tamaño x Tamaño): </label>
+                        <input id="num-bombas" type="number" min="1" value="20">
+                    </div>
+                </div>
+                <button class="btn-generar">Generar</button>
+            </div>
+        </div>
+        <div class="contenedor-juego hidden">
+            <h2>Banderas colocadas: <span id="num-banderas"></span> (faltan <span id="banderas-restantes"></span>)</h2>
+            <div class="juego"></div>
+            <div class="resultado-juego"></div>
+        </div>
     </div>
-    <div id="score-board">
-        <h2>Mejores Tiempos</h2>
-        <ul id="high-scores"></ul>
-        <button id="reset-button">Reiniciar Juego</button>
-    </div>
-    <script src="script.js"></script>
 </body>
 </html>
